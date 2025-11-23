@@ -1,0 +1,4 @@
+.env
+.venv
+src/xans104.egg-info
+src/xans104/__pycache__/

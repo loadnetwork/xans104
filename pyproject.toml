@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xans104"
+version = "0.1.0"
+description = "xANS-104 DataItems extractor for HuggingFace & SageMaker inference"
+authors = [
+  { name = "Rani Elhusseini", email = "rani@decent.land" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = [
+  "ans104",
+  "xans104",
+  "arweave",
+  "huggingface",
+  "sagemaker",
+  "llm",
+  "inference",
+  "loadnetwork",
+  "s3"
+]
+
+[project.urls]
+Homepage = "https://github.com/loadnetwork/xans104"
+Issues = "https://github.com/loadnetwork/xans104/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
