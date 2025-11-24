@@ -2,3 +2,5 @@
 .venv
 src/xans104.egg-info
 src/xans104/__pycache__/
+artifacts/
+tmp/
