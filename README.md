@@ -20,6 +20,22 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 directory and returns `(tokenizer, model, path)` so you can call HF APIs without
 handling files yourself.
 
+## Upload a HuggingFace repo to Load S3
+
+```python
+from xans104 import create_model_dataitem
+
+dataitem_id = create_model_dataitem(
+    "sshleifer/tiny-gpt2",
+    token="LOAD_API_TOKEN",
+    tags={"key-1": "value-1"},
+)
+print(dataitem_id)
+```
+
+`create_model_dataitem` downloads the HF snapshot, tars it, sends it to
+`load-s3-agent`, and returns the `dataitem_id` ready for inference.
+
 
 ## License
 This repository is licensed under the [MIT License](./LICENSE)
