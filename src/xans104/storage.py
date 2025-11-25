@@ -7,10 +7,11 @@ import subprocess
 import tempfile
 from pathlib import Path
 import shutil
-
+from importlib.metadata import version
 from huggingface_hub import snapshot_download
 
 DEFAULT_AGENT_URL = "https://load-s3-agent.load.network/upload"
+__version__ = version("xans104")
 
 
 def create_model_dataitem(
@@ -22,7 +23,7 @@ def create_model_dataitem(
 ) -> str:
     """Download ``repo_id`` from HuggingFace and push it to Load S3."""
 
-    normalized_tags = {"model": repo_id, **(tags or {})}
+    normalized_tags = {"model": repo_id, "SDK": "xans104.py", "SDK-Version": __version__, "framework": "huggingface", **(tags or {})}
 
     tmp = tempfile.mkdtemp(prefix="xans104-hf-")
     try:
